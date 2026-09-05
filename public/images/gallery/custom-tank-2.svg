@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+<defs>
+  <linearGradient id="bg56" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#0b1e2d"/>
+    <stop offset="55%" stop-color="#0e3448"/>
+    <stop offset="100%" stop-color="#163f57"/>
+  </linearGradient>
+  <radialGradient id="glow56" cx="50%" cy="35%" r="65%">
+    <stop offset="0%" stop-color="#56d6e0" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#56d6e0" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg56)"/>
+<rect width="100%" height="100%" fill="url(#glow56)"/>
+
+<path d="M0 67.2 Q 160.0 38.4 320.0 67.2 T 640 67.2" stroke="#56d6e0" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<circle cx="599.6" cy="347.6" r="5.3" fill="#9fe8ec" opacity="0.18"/>
+<circle cx="480.6" cy="466.8" r="4.9" fill="#9fe8ec" opacity="0.13"/>
+<circle cx="244.8" cy="210.8" r="6.5" fill="#9fe8ec" opacity="0.28"/>
+<circle cx="144.3" cy="403.0" r="3.5" fill="#9fe8ec" opacity="0.27"/>
+<circle cx="354.2" cy="298.9" r="2.2" fill="#9fe8ec" opacity="0.11"/>
+<circle cx="561.2" cy="243.9" r="6.3" fill="#9fe8ec" opacity="0.19"/>
+<circle cx="286.5" cy="390.4" r="2.9" fill="#9fe8ec" opacity="0.21"/>
+<circle cx="58.0" cy="251.6" r="6.7" fill="#9fe8ec" opacity="0.12"/>
+<circle cx="101.0" cy="330.1" r="6.5" fill="#9fe8ec" opacity="0.08"/>
+<circle cx="424.8" cy="354.2" r="2.0" fill="#9fe8ec" opacity="0.19"/>
+<circle cx="20.6" cy="346.1" r="6.3" fill="#9fe8ec" opacity="0.16"/>
+<circle cx="235.7" cy="412.5" r="3.4" fill="#9fe8ec" opacity="0.17"/>
+<circle cx="319.5" cy="204.2" r="8.3" fill="#9fe8ec" opacity="0.12"/>
+<circle cx="494.6" cy="322.0" r="2.1" fill="#9fe8ec" opacity="0.14"/>
+<circle cx="369.7" cy="320.2" r="8.4" fill="#9fe8ec" opacity="0.09"/>
+<circle cx="517.6" cy="431.9" r="3.1" fill="#9fe8ec" opacity="0.18"/>
+<g transform="translate(140,120) scale(1.3)"><circle cx="180" cy="110" r="55" fill="none" stroke="#9fe8ec" stroke-width="4"/><circle cx="180" cy="110" r="14" fill="none" stroke="#ffa382" stroke-width="4"/><line x1="180" y1="55" x2="180" y2="70" stroke="#56d6e0" stroke-width="4"/><line x1="180" y1="150" x2="180" y2="165" stroke="#56d6e0" stroke-width="4"/><line x1="125" y1="110" x2="140" y2="110" stroke="#56d6e0" stroke-width="4"/><line x1="220" y1="110" x2="235" y2="110" stroke="#56d6e0" stroke-width="4"/></g>
+</svg>

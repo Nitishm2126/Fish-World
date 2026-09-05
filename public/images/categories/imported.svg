@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+<defs>
+  <linearGradient id="bg8" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#0b1e2d"/>
+    <stop offset="55%" stop-color="#0e3448"/>
+    <stop offset="100%" stop-color="#163f57"/>
+  </linearGradient>
+  <radialGradient id="glow8" cx="50%" cy="35%" r="65%">
+    <stop offset="0%" stop-color="#56d6e0" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#56d6e0" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg8)"/>
+<rect width="100%" height="100%" fill="url(#glow8)"/>
+
+<path d="M0 67.2 Q 160.0 38.4 320.0 67.2 T 640 67.2" stroke="#56d6e0" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<circle cx="156.0" cy="459.5" r="2.9" fill="#9fe8ec" opacity="0.22"/>
+<circle cx="71.1" cy="260.8" r="9.0" fill="#9fe8ec" opacity="0.12"/>
+<circle cx="405.1" cy="319.6" r="5.2" fill="#9fe8ec" opacity="0.18"/>
+<circle cx="135.3" cy="422.9" r="2.6" fill="#9fe8ec" opacity="0.13"/>
+<circle cx="32.0" cy="266.2" r="4.9" fill="#9fe8ec" opacity="0.26"/>
+<circle cx="247.4" cy="223.6" r="3.8" fill="#9fe8ec" opacity="0.28"/>
+<circle cx="57.9" cy="364.4" r="4.6" fill="#9fe8ec" opacity="0.21"/>
+<circle cx="223.1" cy="384.2" r="5.5" fill="#9fe8ec" opacity="0.21"/>
+<circle cx="560.8" cy="353.7" r="3.0" fill="#9fe8ec" opacity="0.09"/>
+<circle cx="587.6" cy="327.8" r="3.4" fill="#9fe8ec" opacity="0.27"/>
+<g transform="translate(140,120) scale(1.1)"><circle cx="180" cy="110" r="60" fill="none" stroke="#9fe8ec" stroke-width="4"/><path d="M180 50 v120 M120 110 h120" stroke="#56d6e0" stroke-width="2" stroke-opacity="0.5"/><path d="M150 90 l60 40 M210 90 l-60 40" stroke="#ffa382" stroke-width="3"/></g>
+<text x="32" y="452" font-family="Georgia, serif" font-size="20" fill="#eef6f4" fill-opacity="0.55">Fish World Ambattur</text>
+</svg>

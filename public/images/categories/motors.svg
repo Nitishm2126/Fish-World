@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+<defs>
+  <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#0b1e2d"/>
+    <stop offset="55%" stop-color="#0e3448"/>
+    <stop offset="100%" stop-color="#163f57"/>
+  </linearGradient>
+  <radialGradient id="glow4" cx="50%" cy="35%" r="65%">
+    <stop offset="0%" stop-color="#56d6e0" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#56d6e0" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="100%" height="100%" fill="url(#bg4)"/>
+<rect width="100%" height="100%" fill="url(#glow4)"/>
+
+<path d="M0 67.2 Q 160.0 38.4 320.0 67.2 T 640 67.2" stroke="#56d6e0" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<circle cx="161.6" cy="220.7" r="4.8" fill="#9fe8ec" opacity="0.11"/>
+<circle cx="59.9" cy="303.6" r="8.4" fill="#9fe8ec" opacity="0.24"/>
+<circle cx="479.1" cy="253.7" r="5.8" fill="#9fe8ec" opacity="0.14"/>
+<circle cx="123.6" cy="221.5" r="3.5" fill="#9fe8ec" opacity="0.27"/>
+<circle cx="517.4" cy="416.2" r="7.6" fill="#9fe8ec" opacity="0.12"/>
+<circle cx="205.9" cy="366.3" r="7.1" fill="#9fe8ec" opacity="0.25"/>
+<circle cx="548.0" cy="216.1" r="6.2" fill="#9fe8ec" opacity="0.21"/>
+<circle cx="323.6" cy="241.4" r="5.3" fill="#9fe8ec" opacity="0.10"/>
+<circle cx="580.8" cy="432.6" r="5.8" fill="#9fe8ec" opacity="0.14"/>
+<circle cx="565.3" cy="351.1" r="8.2" fill="#9fe8ec" opacity="0.25"/>
+<g transform="translate(140,120) scale(1.1)"><circle cx="180" cy="110" r="55" fill="none" stroke="#9fe8ec" stroke-width="4"/><circle cx="180" cy="110" r="14" fill="none" stroke="#ffa382" stroke-width="4"/><line x1="180" y1="55" x2="180" y2="70" stroke="#56d6e0" stroke-width="4"/><line x1="180" y1="150" x2="180" y2="165" stroke="#56d6e0" stroke-width="4"/><line x1="125" y1="110" x2="140" y2="110" stroke="#56d6e0" stroke-width="4"/><line x1="220" y1="110" x2="235" y2="110" stroke="#56d6e0" stroke-width="4"/></g>
+<text x="32" y="452" font-family="Georgia, serif" font-size="20" fill="#eef6f4" fill-opacity="0.55">Fish World Ambattur</text>
+</svg>
