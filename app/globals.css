@@ -1,45 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --color-abyss: #060f17;
-  --color-abyss-deep: #030a10;
-  --color-navy: #0b1e2d;
-  --color-navy-light: #123044;
-  --color-ocean: #163f57;
-  --color-ocean-light: #1f5670;
-  --color-cyan: #56d6e0;
-  --color-cyan-soft: #9fe8ec;
-  --color-coral: #ff7a52;
-  --color-coral-soft: #ffa382;
-  --color-pearl: #eef6f4;
-  --color-seafoam: #9fbdbc;
-  --color-seafoam-dim: #6f8b8a;
+  /* ── Deep Ocean Premium Palette (70/20/10 Balance) ── */
+  --color-ocean-navy: #031522;      /* 70% Base Deep Ocean Navy */
+  --color-ocean-deep: #062A42;      /* 70% Deep Ocean Blue */
+  --color-ocean: #074B68;           /* 70% Ocean Blue (Mid-depth) */
+  --color-aqua: #00AFC1;            /* 20% Vibrant Aqua */
+  --color-aqua-bright: #28D7E5;     /* 20% Bright Aqua / Cyan glow */
+  --color-coral: #FF7048;           /* 10% Coral CTA Primary */
+  --color-coral-hover: #ff8864;     /* Coral hover */
+  --color-pearl: #F4FAFC;           /* Crystalline White */
+  --color-seafoam: #91B5C2;         /* Muted ocean text */
+  --color-seafoam-dim: #608696;     /* Secondary muted metadata */
 
-  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Legacy aliases for backward compatibility */
+  --color-abyss: var(--color-ocean-navy);
+  --color-abyss-deep: #020e18;
+  --color-navy: var(--color-ocean-deep);
+  --color-navy-light: var(--color-ocean);
+  --color-ocean-light: #0d5c80;
+  --color-cyan: var(--color-aqua);
+  --color-cyan-soft: var(--color-aqua-bright);
+  --color-coral-soft: var(--color-coral-hover);
+
+  /* ── Typography ── */
+  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @theme inline {
+  --color-ocean-navy: var(--color-ocean-navy);
+  --color-ocean-deep: var(--color-ocean-deep);
+  --color-ocean: var(--color-ocean);
+  --color-aqua: var(--color-aqua);
+  --color-aqua-bright: var(--color-aqua-bright);
+  --color-coral: var(--color-coral);
+  --color-coral-hover: var(--color-coral-hover);
+  --color-pearl: var(--color-pearl);
+  --color-seafoam: var(--color-seafoam);
+  --color-seafoam-dim: var(--color-seafoam-dim);
+
   --color-abyss: var(--color-abyss);
   --color-abyss-deep: var(--color-abyss-deep);
   --color-navy: var(--color-navy);
   --color-navy-light: var(--color-navy-light);
-  --color-ocean: var(--color-ocean);
   --color-ocean-light: var(--color-ocean-light);
   --color-cyan: var(--color-cyan);
   --color-cyan-soft: var(--color-cyan-soft);
-  --color-coral: var(--color-coral);
   --color-coral-soft: var(--color-coral-soft);
-  --color-pearl: var(--color-pearl);
-  --color-seafoam: var(--color-seafoam);
-  --color-seafoam-dim: var(--color-seafoam-dim);
+
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
 
-* {
-  border-color: var(--color-ocean);
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -48,46 +62,102 @@ html {
 }
 
 body {
-  background: var(--color-abyss);
+  background-color: var(--color-ocean-navy);
+  /* Layered Deep Ocean gradients: clearly deep blue, never flat black */
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(7, 75, 104, 0.45) 0%, transparent 75%),
+    radial-gradient(ellipse 70% 45% at 20% 50%, rgba(6, 42, 66, 0.6) 0%, transparent 80%),
+    radial-gradient(ellipse 80% 60% at 80% 85%, rgba(7, 75, 104, 0.35) 0%, transparent 80%),
+    linear-gradient(180deg, #031522 0%, #062A42 35%, #074B68 55%, #062A42 75%, #031522 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--color-pearl);
   font-family: var(--font-body);
   overflow-x: hidden;
   max-width: 100%;
+  min-height: 100dvh;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+/* Scrollbar hide */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-::selection {
-  background: var(--color-coral);
-  color: var(--color-abyss-deep);
-}
+/* Selection */
+::selection { background: var(--color-aqua); color: #031522; }
 
+/* Focus ring */
+:focus-visible { outline: 2px solid var(--color-aqua-bright); outline-offset: 3px; border-radius: 3px; }
+
+/* Text balance */
+.text-balance { text-wrap: balance; }
+
+/* ── Subtle underwater texture overlay on sections ── */
 .grain::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
 }
 
-.text-balance {
-  text-wrap: balance;
+/* ════════════════════════════════════════
+   ANIMATIONS & UNDERWATER PARTICLES
+   ════════════════════════════════════════ */
+
+/* Bubbles rising gently through water */
+@keyframes rise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 0.65; }
+  85%  { opacity: 0.3; }
+  100% { transform: translateY(-720px) translateX(12px); opacity: 0; }
+}
+.animate-rise {
+  animation-name: rise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
 }
 
+/* Slow drift for floating aquatic items */
+@keyframes drift {
+  0%   { transform: translateY(0) translateX(0); }
+  33%  { transform: translateY(-5px) translateX(3px); }
+  66%  { transform: translateY(-10px) translateX(-3px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+.animate-drift { animation: drift 7s ease-in-out infinite; }
+
+/* Gentle vertical float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* Soft sunlight caustics / ray shimmer */
+@keyframes ray-pulse {
+  0%, 100% { opacity: 0.05; }
+  50%       { opacity: 0.13; }
+}
+.animate-ray { animation: ray-pulse 5s ease-in-out infinite; }
+
+/* Gentle underwater ripple effect */
+@keyframes wave-sway {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%       { transform: scale(1.03) rotate(1deg); }
+}
+.animate-sway { animation: wave-sway 12s ease-in-out infinite; }
+
+/* Pulse ring for active status */
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── Reduced motion compliance ── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -95,29 +165,19 @@ body {
   }
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-cyan);
-  outline-offset: 3px;
-  border-radius: 2px;
+/* ── Deep Ocean Aquarium Glass Card Utility ── */
+.tank-card {
+  background: rgba(6, 42, 66, 0.55);
+  border: 1px solid rgba(0, 175, 193, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(3, 21, 34, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-@keyframes drift {
-  0% { transform: translateY(0) translateX(0); }
-  50% { transform: translateY(-14px) translateX(6px); }
-  100% { transform: translateY(0) translateX(0); }
-}
-.animate-drift {
-  animation: drift 7s ease-in-out infinite;
-}
-
-@keyframes rise {
-  0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 0.6; }
-  90% { opacity: 0.4; }
-  100% { transform: translateY(-620px); opacity: 0; }
-}
-.animate-rise {
-  animation-name: rise;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+.tank-card:hover {
+  border-color: rgba(40, 215, 229, 0.45);
+  box-shadow: 0 14px 38px -8px rgba(0, 175, 193, 0.25), 0 0 0 1px rgba(40, 215, 229, 0.2);
+  transform: translateY(-3px);
 }

@@ -49,7 +49,7 @@ export default function ShopClient() {
         <div className="relative w-full sm:max-w-md">
           <Search
             size={18}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-seafoam-dim"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-aqua/70"
             aria-hidden="true"
           />
           <input
@@ -58,7 +58,7 @@ export default function ShopClient() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search fishes, tanks, filters…"
             aria-label="Search products"
-            className="w-full rounded-full bg-navy/60 border border-ocean/70 focus:border-cyan pl-11 pr-4 py-3 text-base sm:text-sm text-pearl placeholder:text-seafoam-dim outline-none transition-colors min-h-[44px]"
+            className="w-full rounded-full bg-[rgba(6,42,66,0.65)] border border-aqua/25 focus:border-aqua pl-11 pr-4 py-3 text-base sm:text-sm text-pearl placeholder:text-seafoam outline-none transition-all shadow-inner focus:shadow-[0_0_16px_rgba(0,175,193,0.25)] min-h-[44px]"
           />
         </div>
 
@@ -69,10 +69,10 @@ export default function ShopClient() {
               type="button"
               onClick={() => setCategory(c.value)}
               aria-pressed={category === c.value}
-              className={`shrink-0 rounded-full px-4 py-2.5 sm:py-2 text-sm border transition-colors min-h-[40px] sm:min-h-[36px] flex items-center justify-center ${
+              className={`shrink-0 rounded-full px-4 py-2.5 sm:py-2 text-sm border transition-all min-h-[40px] sm:min-h-[36px] flex items-center justify-center ${
                 category === c.value
-                  ? "bg-cyan text-abyss-deep border-cyan font-medium"
-                  : "border-ocean/70 text-seafoam hover:border-cyan/60 hover:text-pearl"
+                  ? "bg-aqua text-ocean-navy border-aqua font-bold shadow-[0_0_16px_rgba(0,175,193,0.35)]"
+                  : "border-aqua/20 bg-[rgba(6,42,66,0.5)] text-seafoam hover:border-aqua/50 hover:text-pearl"
               }`}
             >
               {c.label}
@@ -81,7 +81,7 @@ export default function ShopClient() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="text-xs sm:text-sm text-seafoam-dim">
+          <p className="text-xs sm:text-sm text-seafoam">
             {filtered.length} {filtered.length === 1 ? "product" : "products"}
           </p>
           <div className="flex items-center gap-3">
@@ -89,18 +89,18 @@ export default function ShopClient() {
               <button
                 type="button"
                 onClick={clearFilters}
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-coral-soft hover:text-coral transition-colors min-h-[36px] px-2"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-coral hover:text-coral-hover font-medium transition-colors min-h-[36px] px-2"
               >
                 <X size={14} aria-hidden="true" />
                 Clear filters
               </button>
             )}
-            <label className="text-xs sm:text-sm text-seafoam-dim flex items-center gap-2">
+            <label className="text-xs sm:text-sm text-seafoam flex items-center gap-2">
               Sort
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortOption)}
-                className="rounded-lg bg-navy/60 border border-ocean/70 text-pearl text-base sm:text-sm px-3 py-2 outline-none focus:border-cyan min-h-[38px]"
+                className="rounded-xl bg-[rgba(6,42,66,0.7)] border border-aqua/25 text-pearl text-base sm:text-sm px-3 py-2 outline-none focus:border-aqua min-h-[38px]"
               >
                 <option value="featured">Featured</option>
                 <option value="az">Name A–Z</option>
@@ -113,13 +113,13 @@ export default function ShopClient() {
 
       <div className="mt-8">
         {filtered.length === 0 ? (
-          <div className="text-center py-16 sm:py-20 px-4 rounded-2xl border border-dashed border-ocean/60">
+          <div className="text-center py-16 sm:py-20 px-4 rounded-2xl border border-dashed border-aqua/25 bg-[rgba(6,42,66,0.35)]">
             <p className="text-pearl text-base sm:text-lg">No products match your search.</p>
-            <p className="text-sm text-seafoam-dim mt-2">Try a different keyword or category.</p>
+            <p className="text-sm text-seafoam mt-2">Try a different keyword or category.</p>
             <button
               type="button"
               onClick={clearFilters}
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-coral hover:bg-coral-soft text-abyss-deep font-semibold px-5 py-3 text-sm transition-colors min-h-[44px]"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-coral hover:bg-coral-hover text-ocean-navy font-bold px-5 py-3 text-sm transition-all min-h-[44px] shadow-[0_0_18px_rgba(255,112,72,0.3)]"
             >
               Clear filters
             </button>

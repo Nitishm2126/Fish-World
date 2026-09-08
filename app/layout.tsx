@@ -52,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-abyss text-pearl overflow-x-hidden w-full">
+    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
+      <body className="min-h-full flex flex-col bg-ocean-navy text-pearl overflow-x-hidden w-full selection:bg-aqua selection:text-ocean-navy">
         <Navbar />
         <main className="flex-1 w-full overflow-x-hidden">{children}</main>
         <Footer />

@@ -14,11 +14,7 @@ export default function ProductModal({
   onClose: () => void;
 }) {
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
+    const handleKeyDown = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     if (product) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
@@ -38,7 +34,8 @@ export default function ProductModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-abyss-deep/90 backdrop-blur-sm p-4 sm:p-6"
+          className="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6"
+          style={{ background: "rgba(3, 21, 34, 0.88)", backdropFilter: "blur(20px)" }}
           role="dialog"
           aria-modal="true"
           aria-labelledby="product-modal-title"
@@ -50,51 +47,75 @@ export default function ProductModal({
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-2xl max-h-[88vh] sm:max-h-[90vh] overflow-y-auto rounded-2xl border border-ocean bg-abyss-deep shadow-2xl"
+            className="relative w-full max-w-2xl max-h-[88vh] sm:max-h-[90vh] overflow-y-auto rounded-2xl"
+            style={{
+              background: "rgba(6, 42, 66, 0.98)",
+              border: "1px solid rgba(0, 175, 193, 0.25)",
+              boxShadow: "0 24px 64px rgba(3, 21, 34, 0.9)",
+              backdropFilter: "blur(24px)",
+            }}
           >
+            {/* Close button */}
             <button
               type="button"
               onClick={onClose}
               aria-label="Close product details"
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-11 h-11 rounded-full bg-abyss-deep/90 border border-ocean flex items-center justify-center text-pearl hover:text-cyan-soft transition-colors shadow-lg"
+              className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full flex items-center justify-center text-pearl hover:text-aqua-bright transition-all shadow-lg"
+              style={{
+                background: "rgba(6, 42, 66, 0.85)",
+                border: "1px solid rgba(0, 175, 193, 0.3)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <X size={19} />
             </button>
 
-            <div className="aspect-[16/9] relative overflow-hidden bg-navy">
+            {/* Image */}
+            <div className="aspect-[16/9] relative overflow-hidden rounded-t-2xl bg-[#062A42]">
               <img
                 src={product.image}
                 alt={`${product.name} — ${product.category.toLowerCase()}`}
                 className="w-full h-full object-cover"
               />
+              {/* Gradient at bottom of image */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-24"
+                style={{ background: "linear-gradient(to bottom, transparent, rgba(6, 42, 66, 0.98))" }}
+              />
             </div>
 
+            {/* Content */}
             <div className="p-5 sm:p-8">
-              <span className="text-xs tracking-wide text-cyan-soft uppercase font-medium">{product.category}</span>
-              <h3 id="product-modal-title" className="mt-2 font-[var(--font-display)] text-xl sm:text-2xl text-pearl">
+              <span className="text-xs tracking-widest text-aqua uppercase font-semibold">{product.category}</span>
+              <h3 id="product-modal-title" className="mt-2 font-[var(--font-display)] text-xl sm:text-2xl text-pearl leading-snug">
                 {product.name}
               </h3>
               <p className="mt-3 text-xs sm:text-sm text-seafoam leading-relaxed">{product.description}</p>
 
-              <ul className="mt-5 space-y-2">
+              <ul className="mt-5 space-y-2.5">
                 {product.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-xs sm:text-sm text-seafoam">
-                    <Check size={15} className="text-cyan-soft mt-0.5 shrink-0" aria-hidden="true" />
+                  <li key={f} className="flex items-start gap-2.5 text-xs sm:text-sm text-seafoam">
+                    <Check size={14} className="text-aqua shrink-0 mt-0.5" aria-hidden="true" />
                     {f}
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-ocean/60 pt-5">
+              <div
+                className="mt-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-5"
+                style={{ borderTop: "1px solid rgba(0, 175, 193, 0.14)" }}
+              >
                 <div>
-                  <p className="text-xs text-seafoam-dim">{product.availability}</p>
-                  <p className="text-pearl font-semibold mt-0.5 text-base sm:text-lg">{product.price ?? "Price on Enquiry"}</p>
+                  <p className="text-xs text-seafoam">{product.availability}</p>
+                  <p className="text-pearl font-bold mt-0.5 text-base sm:text-lg">
+                    {product.price ?? "Price on Enquiry"}
+                  </p>
                 </div>
                 <a
                   href={whatsapp.product(product.name)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-coral hover:bg-coral-soft text-abyss-deep font-semibold px-5 py-3 text-sm transition-colors min-h-[44px] w-full sm:w-auto text-center"
+                  className="inline-flex items-center justify-center gap-2 rounded-full text-ocean-navy font-bold px-6 py-3.5 text-sm transition-all min-h-[46px] w-full sm:w-auto bg-coral hover:bg-coral-hover shadow-[0_0_24px_rgba(255,112,72,0.35)]"
                 >
                   <MessageCircle size={17} aria-hidden="true" />
                   Enquire on WhatsApp

@@ -23,11 +23,11 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl border border-ocean/70 bg-navy/40 p-6 sm:p-7"
+              className="tank-card group rounded-2xl p-6 sm:p-7"
             >
-              <Quote size={22} className="text-cyan/60" aria-hidden="true" />
+              <Quote size={22} className="text-aqua/70" aria-hidden="true" />
               <p className="mt-4 text-sm text-seafoam leading-relaxed italic">{t.text}</p>
-              <p className="mt-5 text-sm text-pearl">{t.name}</p>
+              <p className="mt-5 text-sm text-pearl font-medium">{t.name}</p>
               <p className="mt-1 text-[0.7rem] tracking-wide text-seafoam-dim uppercase">Demo placeholder</p>
             </motion.div>
           ))}

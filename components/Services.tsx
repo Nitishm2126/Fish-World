@@ -8,8 +8,21 @@ import SectionHeading from "./SectionHeading";
 
 export default function Services() {
   return (
-    <section id="services" className="scroll-mt-24 py-16 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section
+      id="services"
+      className="scroll-mt-24 py-16 sm:py-24 lg:py-28 relative overflow-hidden"
+    >
+      {/* Subtle ambient deep ocean glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(7, 75, 104, 0.35) 0%, transparent 75%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="What we do"
           title="Aquarium services, handled properly"
@@ -22,22 +35,35 @@ export default function Services() {
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="group rounded-2xl border border-ocean/70 bg-navy/40 p-6 sm:p-7 hover:border-cyan/60 hover:bg-navy/70 transition-colors flex flex-col justify-between"
+                className="tank-card group rounded-2xl p-6 sm:p-7 flex flex-col justify-between"
               >
                 <div>
-                  <Icon size={26} className="text-cyan-soft" aria-hidden="true" />
-                  <h3 className="mt-4 sm:mt-5 text-lg text-pearl font-medium">{service.title}</h3>
-                  <p className="mt-2 text-sm text-seafoam leading-relaxed">{service.description}</p>
+                  {/* Icon with aqua container */}
+                  <div
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5"
+                    style={{
+                      background: "rgba(0, 175, 193, 0.12)",
+                      border: "1px solid rgba(0, 175, 193, 0.28)",
+                    }}
+                  >
+                    <Icon size={22} className="text-aqua-bright" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-lg text-pearl font-semibold group-hover:text-aqua-bright transition-colors leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2.5 text-sm text-seafoam leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
                 <a
                   href={whatsapp.service(service.title)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-coral-soft group-hover:text-coral transition-colors py-2 min-h-[44px] w-fit"
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-coral hover:text-coral-hover transition-colors w-fit min-h-[40px]"
                 >
                   Enquire
                   <ArrowUpRight size={15} aria-hidden="true" />
